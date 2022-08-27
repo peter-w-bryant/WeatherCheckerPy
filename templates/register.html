@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+  <div class="container">
+
+    <h1 style="font-size:large; text-align:center"><b>Create a New Account</b></h1><br>
+
+    <form action="" method="POST">
+      <div class="form-group">
+        <label>Create a Username</label>
+        <input type="text" name="new_username" class="form-control" value={{request.form.new_username}}>
+      </div>
+      <div class="form-group">
+        <label>Create a Password</label>
+        <input type="password" name="new_password" class="form-control" value={{request.form.new_password}}>
+        <p>Minimum 4 characters</p>
+      </div>
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" name="confirm_password" class="form-control" value={{request.form.confirm_password}}>
+      </div>
+      <input type="submit" name="submit" class="btn btn-success" value="Create Account">
+      <a href="/" class="btn btn-primary">Return to Login</a>
+    </form>
+  </div>
+
+  {% endblock %}

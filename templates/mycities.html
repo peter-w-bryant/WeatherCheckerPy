@@ -1,0 +1,108 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<div class="container">
+
+    <h1 style="font-size:large; text-align:center"><b>{{session['user']}}'s Saved Cities</b></h1><br>
+    <!-- Insert image here -->
+    <div>
+        <img src="static/images/buildings.png" alt="Italian Trulli"
+            style="display: block; margin-left: auto; margin-right: auto; width: 10%; height:auto">
+        <br>
+
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-4 is-4">
+                    <form method="POST" class="add">
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                <input class="input" name="new_location" type="text" placeholder="City, (Optional) State">
+                            </div>
+                            <div class="control">
+                                <button class="button is-info" style="background-color:rgb(101, 208, 241)">
+                                    Add City
+                                </button>
+                            </div>
+                        </div>
+                        <p style="font-size:smaller; font-style:italic; color:grey">ex. Madison, Wisconsin; Tokyo,
+                            Japan; Shanghai, China</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <div style="text-align: center;">
+            <form method="POST" class="add">
+                <div>
+                    <button class="button is-info" style="background-color:lightgrey">
+                        Refresh Saved Cities
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-offset-4 is-4">
+                        {% for weather in city_weather_data%}
+                        <div class="box">
+                            <article class="media">
+                                <div class="media-left">
+                                    <figure class="image is-50x50">
+                                        <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p>
+                                            {% if weather.state %}
+                                            {% if weather.country_trans != weather.country %}
+                                            <span class="title">{{ weather.city }}, {{weather.state}},
+                                                {{weather.country}}
+                                                ({{weather.country_trans}})</span>
+                                            {% else %}
+                                            <span class="title">{{ weather.city }}, {{weather.state}},
+                                                {{weather.country}}</span>
+                                            {% endif %}
+                                            {% else %}
+                                            {% if weather.country_trans != weather.country %}
+                                            <span class="title">{{ weather.city }}, {{weather.country}}
+                                                ({{weather.country_trans}})</span>
+                                            {% else %}
+                                            <span class="title">{{ weather.city }}, {{weather.country}}</span>
+                                            {% endif %}
+                                            {% endif %}
+                                            <br>
+                                            <span> {{ weather.temperature }}° F</span>
+                                            <span style="font-size:x-small">(Feels like {{
+                                                weather.feels_like }}° F)</span>
+                                            <br> {{ weather.description }}
+                                        </p>
+                                        <!-- Create a drop down menu that provides the wind speed of the city -->
+
+                                        <p>
+                                            <span class="subtitle">Humidity: {{ weather.humidity }}%</span><br>
+                                            <span class="subtitle">Wind Speed: {{ weather.wind_speed }} mph</span><br>
+                                            <span class="subtitle">Cloudiness: {{ weather.clouds }}%</span><br>
+                                            <span class="subtitle">Wind Direction: {{ weather.wind_deg }}°</span><br>
+
+                                            <span class="subtitle">Atmospheric pressure: {{ weather.pressure }} <a
+                                                    href="http://www.environmentdata.org/archive/vocabpref:20711#:~:text=Hectopascal%20is%20a%20100x%20multiple,1%20Hectopascal%20equals%20100%20Pascals.">hPa</a></span>
+                                            <br>
+                                            <span class="subtitle">Sunrise: {{ weather.sunrise }} UTC</span><br>
+                                            <span class="subtitle">Sunset: {{ weather.sunset }} UTC</span><br>
+
+                                        </p>
+
+                                    </div>
+                            </article>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% endblock %}

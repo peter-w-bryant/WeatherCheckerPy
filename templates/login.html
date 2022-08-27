@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container">
+  <h1 style="font-size:large; text-align:center"><b>Login</b><span><img src="/static/images/wave.gif" alt="wave" style="width:3%;height:auto;"></span></h1><br>
+  <div>
+    <p style="color:grey; text-align:center"><b> Please <u>log in</u> with your WeatherChecker.py credentials to see
+        your saved cities or <u>continue as a guest</u> to search cities, thanks!</b></p>
+  </div><br>
+  <form action="" method="POST">
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" name="username" class="form-control" value={{request.form.username}}>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" name="password" class="form-control" value={{request.form.password}}>
+    </div>
+    <div class="form-group">
+      <input type="submit" name="submit" class="btn btn-success" value="Login">
+      <a href="/search" class="btn btn-primary">Continue as guest</a>
+      <div>
+        <p style="color:grey; text-align:center"><i>Don't have an account? <b><a style="color:blue"
+                href="/register">Create an Account</a></b>!</i></p><br>
+                <p style="color:grey; text-align:center"><i>Don't want to make an account? Use my account!<br> Username:<b><a style="color:rgb(101, 208, 241)"
+                  > Peter</a></b> Password:<b><a style="color:rgb(101, 208, 241)"> Bryant</a> </b></i></p>
+
+            
+      </div><br>
+  </form>
+</div>
+
+{% endblock %}

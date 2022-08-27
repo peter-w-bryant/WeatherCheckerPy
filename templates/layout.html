@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WeatherChecker</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style/show.css">
+    <link rel="icon" href="/static/images/cloud-icon.png" type="image/png" size="16x16">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+    
+
+</head>
+
+<body>
+    {% include 'includes/_navbar.html'%}
+    {% include 'includes/_messages.html' %}
+    
+
+    {% block body %}{% endblock %}
+
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
+    <script type="text/javascript">
+        CKEDITOR.replace('editor')
+    </script>
+
+    <footer class="footer" style="background-color: FFFFFF;">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>
+                    <strong>WeatherChecker.py</strong> by Peter Bryant &nbsp;<span class="glyphicon glyphicon-cloud"
+                        style="color:grey"></span>
+                </p>
+                <p style="font-size:xx-small; color:grey; font-style:italic"> Built with Flask and MySQL. </p> <br>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
