@@ -12,6 +12,7 @@ https://user-images.githubusercontent.com/72423203/189508540-63560517-5b3f-406c-
 https://user-images.githubusercontent.com/72423203/189508606-87043031-283d-42d7-8c3e-df22f4bc19f7.mp4
 
 ## My Cities Interface
+https://user-images.githubusercontent.com/72423203/189508696-26f76bce-0bae-41c6-86eb-ffa6039a7c5c.mp4
 
 ## Running WeatherChecker.py Locally
 
