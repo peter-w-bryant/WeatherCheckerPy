@@ -6,6 +6,7 @@ Alternatively, all users (including those who continue as guests from the login 
 The app is being hosted online and can be accessed here at: https://weather-checker-py.herokuapp.com/.
 
 ## User Login / Registration
+https://user-images.githubusercontent.com/72423203/189508540-63560517-5b3f-406c-b3bb-4f9bdf95dd41.mp4
 
 ## Search Interface
 
