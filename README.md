@@ -11,7 +11,7 @@ The app is being hosted online and can be accessed here at: https://weather-chec
 
 ## My Cities Interface
 
-<h4>Running WeatherChecker.py Locally</h4>
+## Running WeatherChecker.py Locally
 
 <p>Clone my repository</p>
 
