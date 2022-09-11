@@ -9,6 +9,7 @@ The app is being hosted online and can be accessed here at: https://weather-chec
 https://user-images.githubusercontent.com/72423203/189508540-63560517-5b3f-406c-b3bb-4f9bdf95dd41.mp4
 
 ## Search Interface
+https://user-images.githubusercontent.com/72423203/189508606-87043031-283d-42d7-8c3e-df22f4bc19f7.mp4
 
 ## My Cities Interface
 
