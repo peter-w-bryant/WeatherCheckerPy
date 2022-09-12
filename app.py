@@ -8,12 +8,10 @@ from datetime import datetime, tzinfo
 from dateutil import tz
 from pytz import timezone
 import config
-
 import os 
 
 app = Flask(__name__)
-app.secret_key = "not so secret key" # Generate a secret key.
-
+app.secret_key = config.secret 
 
 #Config MySQL: HEROKU
 app.config['MYSQL_HOST'] = config.host
