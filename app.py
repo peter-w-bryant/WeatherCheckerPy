@@ -7,6 +7,7 @@ from flask_mysqldb import MySQL
 from datetime import datetime, tzinfo
 from dateutil import tz
 from pytz import timezone
+import config
 
 import os 
 
@@ -15,18 +16,11 @@ app.secret_key = "not so secret key" # Generate a secret key.
 
 
 #Config MySQL: HEROKU
-app.config['MYSQL_HOST'] = 'us-cdbr-east-06.cleardb.net'
-app.config['MYSQL_USER'] = 'b4b9c04e10a34b'
-app.config['MYSQL_PASSWORD'] = 'ea22e2d8'
-app.config['MYSQL_DB'] = 'heroku_59c416b0f8cff66'
+app.config['MYSQL_HOST'] = config.host
+app.config['MYSQL_USER'] = config.user
+app.config['MYSQL_PASSWORD'] = config.password
+app.config['MYSQL_DB'] = config.database
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
-
-#Config MySQL: LOCAL
-# app.config['MYSQL_HOST'] = 'localhost'
-# app.config['MYSQL_USER'] = 'root'
-# app.config['MYSQL_PASSWORD'] = 'Orion007'
-# app.config['MYSQL_DB'] = 'check_weather'
-# app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql = MySQL(app)
 
